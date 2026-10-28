@@ -1,0 +1,22 @@
+# Tahap 1-2: pengumpulan data dan pemeriksaan kualitas
+requests
+python-dotenv
+pandas==2.2.3
+regex==2026.9.10
+lingua-language-detector==2.2.0
+
+# Tahap 3: prapemrosesan dan BERTopic
+scikit-learn==1.9.1
+transformers==5.17.0
+sentence-transformers
+bertopic==0.17.4
+umap-learn
+hdbscan
+gensim
+numpy
+
+# Tahap 4: sentimen (pembanding) serta tabel dan grafik hasil
+torch==2.14.0
+scipy
+matplotlib
+openpyxl
