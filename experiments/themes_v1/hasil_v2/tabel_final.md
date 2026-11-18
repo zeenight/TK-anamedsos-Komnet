@@ -74,15 +74,15 @@ Chi-square: third_party: {'chi2': 128.21, 'dof': 6, 'p': 3.06e-25, 'cramers_v': 
 
 ## Per kasus (% kolom)
 
-| case_id   | org_type   | video_type       | verifikasi     |   n |   KV |   KO |   PK |   AK |   EJ |   AU |   HC |   LT |
-|:----------|:-----------|:-----------------|:---------------|----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|
-| C01       | commercial | third_party      | credible_media | 276 | 26.4 | 10.5 | 14.5 | 12   | 12   | 11.6 | 12   |  1.1 |
-| C02       | government | third_party      | credible_media |  65 | 32.3 | 16.9 | 35.4 | 15.4 |  0   |  0   |  0   |  0   |
-| C03       | government | reupload_archive | to_verify      | 493 | 37.5 | 16.6 | 17   |  7.5 | 16.8 |  4.1 |  0.4 |  0   |
-| C04       | government | third_party      | to_verify      | 187 | 24.6 | 39.6 |  5.3 | 23   |  3.2 |  4.3 |  0   |  0   |
-| C05       | commercial | reupload_archive | to_verify      |  77 | 55.8 | 13   |  9.1 |  3.9 | 14.3 |  3.9 |  0   |  0   |
-| C06       | commercial | reupload_archive | to_verify      |  72 | 55.6 | 16.7 |  8.3 |  6.9 |  8.3 |  2.8 |  1.4 |  0   |
-| C07       | government | third_party      | to_verify      | 457 | 12.9 | 30.2 | 22.5 | 19.9 |  3.7 |  7.7 |  3.1 |  0   |
+| case_id   | org_type   | video_type       | verifikasi          |   n |   KV |   KO |   PK |   AK |   EJ |   AU |   HC |   LT |
+|:----------|:-----------|:-----------------|:--------------------|----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|
+| C01       | commercial | third_party      | credible_media      | 276 | 26.4 | 10.5 | 14.5 | 12   | 12   | 11.6 | 12   |  1.1 |
+| C02       | government | third_party      | credible_media      |  65 | 32.3 | 16.9 | 35.4 | 15.4 |  0   |  0   |  0   |  0   |
+| C03       | government | reupload_archive | to_verify           | 493 | 37.5 | 16.6 | 17   |  7.5 | 16.8 |  4.1 |  0.4 |  0   |
+| C04       | government | third_party      | credible_media      | 187 | 24.6 | 39.6 |  5.3 | 23   |  3.2 |  4.3 |  0   |  0   |
+| C05       | commercial | reupload_archive | to_verify           |  77 | 55.8 | 13   |  9.1 |  3.9 | 14.3 |  3.9 |  0   |  0   |
+| C06       | commercial | reupload_archive | to_verify           |  72 | 55.6 | 16.7 |  8.3 |  6.9 |  8.3 |  2.8 |  1.4 |  0   |
+| C07       | government | third_party      | official_disclosure | 457 | 12.9 | 30.2 | 22.5 | 19.9 |  3.7 |  7.7 |  3.1 |  0   |
 
 ## Ko-okurensi (tema utama x tema kedua)
 
@@ -97,19 +97,19 @@ Chi-square: third_party: {'chi2': 128.21, 'dof': 6, 'p': 3.06e-25, 'cramers_v': 
 
 Pasangan tersering (tanpa urutan): AK+PK 51, KO+KV 22, KV+PK 20, AK+KO 18, KO+PK 14, AK+KV 10, HC+PK 6, HC+KV 4
 
-## Robustness: hanya kasus credible_media (C01 komersial, C02 pemerintah; n=341)
+## Robustness: hanya kasus terverifikasi (credible_media, official_disclosure; pemerintah C02, C04, C07, komersial C01; n=985)
 
 | kode   | tema                      |   pct_government |   pct_commercial |   selisih_poin |   pct_government_semua |   pct_commercial_semua |   selisih_poin_semua |
 |:-------|:--------------------------|-----------------:|-----------------:|---------------:|-----------------------:|-----------------------:|---------------------:|
-| KV     | Kualitas visual           |             32.3 |             26.4 |            5.9 |                   25.9 |                   36.7 |                -10.8 |
-| KO     | Kepantasan organisasi     |             16.9 |             10.5 |            6.4 |                   25.4 |                   12   |                 13.4 |
-| PK     | Pekerja kreatif           |             35.4 |             14.5 |           20.9 |                   18.3 |                   12.5 |                  5.8 |
-| AK     | Biaya, anggaran & korupsi |             15.4 |             12   |            3.4 |                   15.1 |                    9.6 |                  5.5 |
-| EJ     | Ejekan tanpa alasan       |              0   |             12   |          -12   |                    8.8 |                   11.8 |                 -3   |
-| AU     | Kekhawatiran umum AI      |              0   |             11.6 |          -11.6 |                    5.2 |                    8.7 |                 -3.5 |
-| HC     | Hak cipta                 |              0   |             12   |          -12   |                    1.3 |                    8   |                 -6.7 |
+| KV     | Kualitas visual           |             17.8 |             26.4 |           -8.6 |                   25.9 |                   36.7 |                -10.8 |
+| KO     | Kepantasan organisasi     |             31.5 |             10.5 |           21   |                   25.4 |                   12   |                 13.4 |
+| PK     | Pekerja kreatif           |             19.2 |             14.5 |            4.7 |                   18.3 |                   12.5 |                  5.8 |
+| AK     | Biaya, anggaran & korupsi |             20.3 |             12   |            8.3 |                   15.1 |                    9.6 |                  5.5 |
+| EJ     | Ejekan tanpa alasan       |              3.2 |             12   |           -8.8 |                    8.8 |                   11.8 |                 -3   |
+| AU     | Kekhawatiran umum AI      |              6.1 |             11.6 |           -5.5 |                    5.2 |                    8.7 |                 -3.5 |
+| HC     | Hak cipta                 |              2   |             12   |          -10   |                    1.3 |                    8   |                 -6.7 |
 | LT     | Lainnya                   |              0   |              1.1 |           -1.1 |                    0   |                    0.7 |                 -0.7 |
 
-Pada subset ini setiap jenis organisasi hanya diwakili satu kasus, sehingga perbedaan organisasi dan perbedaan kasus tidak bisa dipisahkan.
+Pada subset ini sisi komersial hanya diwakili 1 kasus, sehingga perbedaan jenis organisasi dan perbedaan kasus tidak bisa dipisahkan sepenuhnya. Semua kasus terverifikasi berjenis video third_party, jadi RQ3 tidak bisa diuji ulang pada subset ini.
 
-Chi-square: {'chi2': 38.24, 'dof': 6, 'p': 1.01e-06, 'cramers_v': 0.336, 'n': 338, 'note': 'LT excluded (3 comments); comments are clustered in 7 cases, so p-values overstate certainty and are descriptive only'}
+Chi-square: {'chi2': 128.21, 'dof': 6, 'p': 3.06e-25, 'cramers_v': 0.361, 'n': 982, 'note': 'LT excluded (3 comments); comments are clustered in 7 cases, so p-values overstate certainty and are descriptive only'}

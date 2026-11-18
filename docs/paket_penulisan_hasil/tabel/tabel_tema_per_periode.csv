@@ -1,0 +1,5 @@
+video_type,periode,KV,KO,PK,AK,EJ,AU,HC,n
+reupload_archive,<=7 hari,27.5,37.5,15.0,7.5,7.5,5.0,0.0,40
+reupload_archive,>7 hari,42.7,14.8,15.1,7.0,16.1,3.8,0.5,602
+third_party,<=7 hari,19.2,27.6,18.4,18.1,5.0,7.2,4.3,678
+third_party,>7 hari,22.5,21.2,16.6,17.6,7.2,8.5,5.9,307

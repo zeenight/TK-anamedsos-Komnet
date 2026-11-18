@@ -7,7 +7,7 @@ Output (experiments/themes_v1/hasil_v2/):
   tabel_rq3_video_type.csv      % per video type (reupload_archive / third_party), CI, difference
   tabel_per_kasus.csv           % per case (C01-C07)
   tabel_kookurensi.csv          tema_utama x tema_kedua counts (comments with a second theme)
-  tabel_robustness.csv          RQ2/RQ3 again with only credible_media cases (C01, C02)
+  tabel_robustness.csv          RQ2 again with only verified cases (credible_media or official_disclosure)
   uji_chi2.json                 chi-square + Cramer's V for RQ2/RQ3 (descriptive, see note)
   tabel_final.md                all tables in Markdown for the report
   fig1_rq1_tema.png, fig2_rq2_org_type.png, fig3_rq3_video_type.png, fig4_per_kasus.png, fig5_kookurensi.png
@@ -30,6 +30,10 @@ import matplotlib.pyplot as plt  # noqa: E402
 DIR = Path(__file__).parent
 OUT = DIR / "hasil_v2"
 MANIFEST = DIR.parents[1] / "config" / "videos_manifest.csv"
+
+# statuses counted as verified in the robustness check (team decision 2026-11-09:
+# official_disclosure = the organisation itself stated the AI use, counted as verified)
+VERIFIED = ["credible_media", "official_disclosure"]
 
 THEMES = ["KV", "KO", "PK", "AK", "EJ", "AU", "HC", "LT"]
 NAMES = {
@@ -217,13 +221,15 @@ def main():
     co.to_csv(OUT / "tabel_kookurensi.csv")
     pairs = two.apply(lambda r: "+".join(sorted([r["tema_utama"], r["tema_kedua"]])), axis=1).value_counts()
 
-    # robustness: credible_media cases only
-    cred = df[df["verification_status"] == "credible_media"]
+    # robustness: verified cases only
+    cred = df[df["verification_status"].isin(VERIFIED)]
+    cred_cases = {g: sorted(cred.loc[cred["org_type"] == g, "case_id"].unique()) for g in GROUPS["org_type"][0]}
+    cred_vt = sorted(cred["video_type"].unique())
     tr = share_table(cred, "org_type", GROUPS["org_type"][0])
     tr = tr.merge(t2[["kode", "pct_government", "pct_commercial", "selisih_poin"]], on="kode",
                   suffixes=("", "_semua"))
     tr.to_csv(OUT / "tabel_robustness.csv", index=False)
-    tests["robustness_org_type_credible_only"] = chi2(cred, "org_type")
+    tests["robustness_org_type_verified_only"] = chi2(cred, "org_type")
     (OUT / "uji_chi2.json").write_text(json.dumps(tests, indent=2), encoding="utf-8")
 
     # figures
@@ -263,12 +269,15 @@ def main():
         "## Per kasus (% kolom)", md(tc),
         "## Ko-okurensi (tema utama x tema kedua)", co.to_markdown(),
         "Pasangan tersering (tanpa urutan): " + ", ".join(f"{k} {v}" for k, v in pairs.head(8).items()),
-        f"## Robustness: hanya kasus credible_media (C01 komersial, C02 pemerintah; n={len(cred)})",
+        f"## Robustness: hanya kasus terverifikasi ({', '.join(VERIFIED)}; "
+        f"pemerintah {', '.join(cred_cases['government'])}, komersial {', '.join(cred_cases['commercial'])}; "
+        f"n={len(cred)})",
         md(tr[["kode", "tema", "pct_government", "pct_commercial", "selisih_poin", "pct_government_semua",
                "pct_commercial_semua", "selisih_poin_semua"]]),
-        "Pada subset ini setiap jenis organisasi hanya diwakili satu kasus, sehingga perbedaan organisasi "
-        "dan perbedaan kasus tidak bisa dipisahkan.",
-        f"Chi-square: {tests['robustness_org_type_credible_only']}",
+        f"Pada subset ini sisi komersial hanya diwakili {len(cred_cases['commercial'])} kasus, sehingga perbedaan "
+        "jenis organisasi dan perbedaan kasus tidak bisa dipisahkan sepenuhnya. Semua kasus terverifikasi berjenis "
+        f"video {', '.join(cred_vt)}, jadi RQ3 tidak bisa diuji ulang pada subset ini.",
+        f"Chi-square: {tests['robustness_org_type_verified_only']}",
     ]
     (OUT / "tabel_final.md").write_text("\n\n".join(parts) + "\n", encoding="utf-8")
     print((OUT / "tabel_final.md").read_text(encoding="utf-8"))

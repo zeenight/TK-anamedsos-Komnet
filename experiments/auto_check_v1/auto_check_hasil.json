@@ -1,0 +1,179 @@
+{
+  "version": "auto_check v1.0",
+  "seed": 42,
+  "model": "StandardScaler + LogisticRegression(C=0.05, class_weight=balanced) on paraphrase-multilingual-mpnet-base-v2 embeddings",
+  "sikap": {
+    "task": "sikap",
+    "labels": [
+      "dukung",
+      "lain",
+      "tolak"
+    ],
+    "n_train": 2188,
+    "label_dist_train": {
+      "tolak": 1561,
+      "lain": 482,
+      "dukung": 145
+    },
+    "cv_author": {
+      "n": 2188,
+      "accuracy": 0.61,
+      "macro_f1": 0.455,
+      "f1_per_class": {
+        "dukung": 0.194,
+        "lain": 0.436,
+        "tolak": 0.735
+      }
+    },
+    "cv_leave_case_out": {
+      "n": 2188,
+      "accuracy": 0.589,
+      "macro_f1": 0.408,
+      "f1_per_class": {
+        "dukung": 0.12,
+        "lain": 0.374,
+        "tolak": 0.729
+      },
+      "accuracy_per_case": {
+        "C01": 0.545,
+        "C02": 0.575,
+        "C03": 0.673,
+        "C04": 0.524,
+        "C05": 0.633,
+        "C06": 0.611,
+        "C07": 0.571
+      }
+    },
+    "sample_model_vs_human_blind": {
+      "n": 99,
+      "accuracy": 0.525,
+      "macro_f1": 0.365,
+      "f1_per_class": {
+        "dukung": 0.118,
+        "lain": 0.327,
+        "tolak": 0.652
+      }
+    },
+    "sample_claude_vs_human_blind": {
+      "n": 99,
+      "accuracy": 0.626,
+      "macro_f1": 0.505,
+      "f1_per_class": {
+        "dukung": 0.444,
+        "lain": 0.327,
+        "tolak": 0.743
+      }
+    },
+    "sample_model_vs_claude": {
+      "n": 99,
+      "accuracy": 0.515,
+      "macro_f1": 0.407,
+      "f1_per_class": {
+        "dukung": 0.091,
+        "lain": 0.538,
+        "tolak": 0.592
+      }
+    }
+  },
+  "tema": {
+    "task": "tema",
+    "labels": [
+      "AK",
+      "AU",
+      "EJ",
+      "HC",
+      "KO",
+      "KV",
+      "PK"
+    ],
+    "n_train": 1524,
+    "label_dist_train": {
+      "KV": 441,
+      "KO": 338,
+      "PK": 254,
+      "AK": 211,
+      "EJ": 142,
+      "AU": 91,
+      "HC": 47
+    },
+    "cv_author": {
+      "n": 1524,
+      "accuracy": 0.63,
+      "macro_f1": 0.594,
+      "f1_per_class": {
+        "AK": 0.779,
+        "AU": 0.38,
+        "EJ": 0.509,
+        "HC": 0.577,
+        "KO": 0.577,
+        "KV": 0.704,
+        "PK": 0.631
+      }
+    },
+    "cv_leave_case_out": {
+      "n": 1524,
+      "accuracy": 0.585,
+      "macro_f1": 0.526,
+      "f1_per_class": {
+        "AK": 0.77,
+        "AU": 0.297,
+        "EJ": 0.456,
+        "HC": 0.348,
+        "KO": 0.485,
+        "KV": 0.66,
+        "PK": 0.663
+      },
+      "accuracy_per_case": {
+        "C01": 0.531,
+        "C02": 0.767,
+        "C03": 0.601,
+        "C04": 0.576,
+        "C05": 0.609,
+        "C06": 0.594,
+        "C07": 0.572
+      }
+    },
+    "sample_model_vs_human_blind": {
+      "n": 100,
+      "accuracy": 0.5,
+      "macro_f1": 0.451,
+      "f1_per_class": {
+        "AK": 0.714,
+        "AU": 0.312,
+        "EJ": 0.444,
+        "HC": 0.0,
+        "KO": 0.39,
+        "KV": 0.588,
+        "PK": 0.71
+      }
+    },
+    "sample_claude_vs_human_blind": {
+      "n": 100,
+      "accuracy": 0.55,
+      "macro_f1": 0.454,
+      "f1_per_class": {
+        "AK": 0.625,
+        "AU": 0.16,
+        "EJ": 0.538,
+        "HC": 0.0,
+        "KO": 0.439,
+        "KV": 0.746,
+        "PK": 0.667
+      }
+    },
+    "sample_model_vs_claude": {
+      "n": 100,
+      "accuracy": 0.59,
+      "macro_f1": 0.538,
+      "f1_per_class": {
+        "AK": 0.667,
+        "AU": 0.308,
+        "EJ": 0.519,
+        "HC": 0.4,
+        "KO": 0.609,
+        "KV": 0.655,
+        "PK": 0.606
+      }
+    }
+  }
+}

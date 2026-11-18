@@ -1,0 +1,264 @@
+{
+  "script": "src/sentiment_eval.py v1.0",
+  "model": {
+    "id": "w11wo/indonesian-roberta-base-sentiment-classifier",
+    "xlmr": "cardiffnlp/twitter-xlm-roberta-base-sentiment"
+  },
+  "gold": "experiments/stance_v1/validasi_sikap_final.csv (sikap_final, setelah adjudikasi)",
+  "id_vs_final": {
+    "n": 100,
+    "biner_negatif_vs_tolak": {
+      "accuracy": 0.7,
+      "precision": 0.75,
+      "recall": 0.818,
+      "f1": 0.783
+    },
+    "tiga_kelas": {
+      "accuracy": 0.65,
+      "macro_f1": 0.471,
+      "kappa": 0.27,
+      "per_kelas": {
+        "tolak": {
+          "precision": 0.75,
+          "recall": 0.818,
+          "f1-score": 0.783,
+          "support": 66
+        },
+        "lain": {
+          "precision": 0.692,
+          "recall": 0.321,
+          "f1-score": 0.439,
+          "support": 28
+        },
+        "dukung": {
+          "precision": 0.133,
+          "recall": 0.333,
+          "f1-score": 0.19,
+          "support": 6
+        }
+      }
+    },
+    "confusion_matrix": {
+      "baris_label_manusia": [
+        "tolak",
+        "lain",
+        "dukung"
+      ],
+      "kolom_sentimen": [
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      "nilai": [
+        [
+          54,
+          4,
+          8
+        ],
+        [
+          14,
+          9,
+          5
+        ],
+        [
+          4,
+          0,
+          2
+        ]
+      ]
+    }
+  },
+  "id_vs_zillan_blind": {
+    "n": 99,
+    "biner_negatif_vs_tolak": {
+      "accuracy": 0.717,
+      "precision": 0.915,
+      "recall": 0.747,
+      "f1": 0.823
+    },
+    "tiga_kelas": {
+      "accuracy": 0.697,
+      "macro_f1": 0.4,
+      "kappa": 0.143,
+      "per_kelas": {
+        "tolak": {
+          "precision": 0.915,
+          "recall": 0.747,
+          "f1-score": 0.823,
+          "support": 87
+        },
+        "lain": {
+          "precision": 0.231,
+          "recall": 0.3,
+          "f1-score": 0.261,
+          "support": 10
+        },
+        "dukung": {
+          "precision": 0.067,
+          "recall": 0.5,
+          "f1-score": 0.118,
+          "support": 2
+        }
+      }
+    },
+    "confusion_matrix": {
+      "baris_label_manusia": [
+        "tolak",
+        "lain",
+        "dukung"
+      ],
+      "kolom_sentimen": [
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      "nilai": [
+        [
+          65,
+          10,
+          12
+        ],
+        [
+          5,
+          3,
+          2
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ]
+    }
+  },
+  "xlmr_vs_final": {
+    "n": 100,
+    "biner_negatif_vs_tolak": {
+      "accuracy": 0.68,
+      "precision": 0.783,
+      "recall": 0.712,
+      "f1": 0.746
+    },
+    "tiga_kelas": {
+      "accuracy": 0.61,
+      "macro_f1": 0.44,
+      "kappa": 0.238,
+      "per_kelas": {
+        "tolak": {
+          "precision": 0.783,
+          "recall": 0.712,
+          "f1-score": 0.746,
+          "support": 66
+        },
+        "lain": {
+          "precision": 0.419,
+          "recall": 0.464,
+          "f1-score": 0.441,
+          "support": 28
+        },
+        "dukung": {
+          "precision": 0.111,
+          "recall": 0.167,
+          "f1-score": 0.133,
+          "support": 6
+        }
+      }
+    },
+    "confusion_matrix": {
+      "baris_label_manusia": [
+        "tolak",
+        "lain",
+        "dukung"
+      ],
+      "kolom_sentimen": [
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      "nilai": [
+        [
+          47,
+          15,
+          4
+        ],
+        [
+          11,
+          13,
+          4
+        ],
+        [
+          2,
+          3,
+          1
+        ]
+      ]
+    }
+  },
+  "xlmr_vs_zillan_blind": {
+    "n": 99,
+    "biner_negatif_vs_tolak": {
+      "accuracy": 0.657,
+      "precision": 0.949,
+      "recall": 0.644,
+      "f1": 0.767
+    },
+    "tiga_kelas": {
+      "accuracy": 0.626,
+      "macro_f1": 0.398,
+      "kappa": 0.156,
+      "per_kelas": {
+        "tolak": {
+          "precision": 0.949,
+          "recall": 0.644,
+          "f1-score": 0.767,
+          "support": 87
+        },
+        "lain": {
+          "precision": 0.161,
+          "recall": 0.5,
+          "f1-score": 0.244,
+          "support": 10
+        },
+        "dukung": {
+          "precision": 0.111,
+          "recall": 0.5,
+          "f1-score": 0.182,
+          "support": 2
+        }
+      }
+    },
+    "confusion_matrix": {
+      "baris_label_manusia": [
+        "tolak",
+        "lain",
+        "dukung"
+      ],
+      "kolom_sentimen": [
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      "nilai": [
+        [
+          56,
+          25,
+          6
+        ],
+        [
+          3,
+          5,
+          2
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ]
+    }
+  },
+  "baseline_mayoritas_tolak": {
+    "accuracy": 0.66
+  },
+  "crosstab_semua_relevan_n": 2288
+}

@@ -1,9 +1,9 @@
 kode,tema,n_government,pct_government,ci_government,n_commercial,pct_commercial,ci_commercial,selisih_poin,pct_government_semua,pct_commercial_semua,selisih_poin_semua
-KV,Kualitas visual,21,32.3,22.2-44.4,73,26.4,21.6-32.0,5.9,25.9,36.7,-10.8
-KO,Kepantasan organisasi,11,16.9,9.7-27.8,29,10.5,7.4-14.7,6.4,25.4,12.0,13.4
-PK,Pekerja kreatif,23,35.4,24.9-47.5,40,14.5,10.8-19.1,20.9,18.3,12.5,5.8
-AK,"Biaya, anggaran & korupsi",10,15.4,8.6-26.1,33,12.0,8.6-16.3,3.4,15.1,9.6,5.5
-EJ,Ejekan tanpa alasan,0,0.0,0.0-5.6,33,12.0,8.6-16.3,-12.0,8.8,11.8,-3.0
-AU,Kekhawatiran umum AI,0,0.0,0.0-5.6,32,11.6,8.3-15.9,-11.6,5.2,8.7,-3.5
-HC,Hak cipta,0,0.0,0.0-5.6,33,12.0,8.6-16.3,-12.0,1.3,8.0,-6.7
-LT,Lainnya,0,0.0,0.0-5.6,3,1.1,0.4-3.1,-1.1,0.0,0.7,-0.7
+KV,Kualitas visual,126,17.8,15.1-20.8,73,26.4,21.6-32.0,-8.6,25.9,36.7,-10.8
+KO,Kepantasan organisasi,223,31.5,28.1-35.0,29,10.5,7.4-14.7,21.0,25.4,12.0,13.4
+PK,Pekerja kreatif,136,19.2,16.5-22.2,40,14.5,10.8-19.1,4.7,18.3,12.5,5.8
+AK,"Biaya, anggaran & korupsi",144,20.3,17.5-23.4,33,12.0,8.6-16.3,8.3,15.1,9.6,5.5
+EJ,Ejekan tanpa alasan,23,3.2,2.2-4.8,33,12.0,8.6-16.3,-8.8,8.8,11.8,-3.0
+AU,Kekhawatiran umum AI,43,6.1,4.5-8.1,32,11.6,8.3-15.9,-5.5,5.2,8.7,-3.5
+HC,Hak cipta,14,2.0,1.2-3.3,33,12.0,8.6-16.3,-10.0,1.3,8.0,-6.7
+LT,Lainnya,0,0.0,-0.0-0.5,3,1.1,0.4-3.1,-1.1,0.0,0.7,-0.7

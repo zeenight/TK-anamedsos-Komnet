@@ -1,0 +1,35 @@
+{
+  "script": "src/descriptive_stats.py v1.0",
+  "pengguna": {
+    "author_unik": 2545,
+    "author_lebih_dari_1_kasus": 84,
+    "pct_author_lebih_dari_1_kasus": 3.3,
+    "max_komentar_satu_author": 43,
+    "pct_komentar_dari_top1pct_author": 7.7,
+    "pct_author_1_komentar": 87.4
+  },
+  "engagement": {
+    "n_lolos_kualitas": 3145,
+    "median_like": 0.0,
+    "mean_like": 5.88,
+    "max_like": 2016,
+    "pct_nol_like": 65.6,
+    "gini_like": 0.951,
+    "pct_like_dari_top1pct_komentar": 64.1,
+    "top_level": 2319,
+    "pct_top_level_dengan_balasan": 11.6,
+    "median_balasan_jika_ada": 1.0,
+    "max_balasan": 38,
+    "top10_like_sikap": {
+      "tolak": 9,
+      "lain": 1
+    },
+    "top10_like_tema": {
+      "KV": 5,
+      "KO": 2,
+      "AU": 1,
+      "HC": 1,
+      "PK": 1
+    }
+  }
+}

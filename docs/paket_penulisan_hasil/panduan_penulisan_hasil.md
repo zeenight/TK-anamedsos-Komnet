@@ -72,7 +72,7 @@ Laporkan tabel ini apa adanya:
 
 | Tahap | Sampel | κ buta (manusia vs Claude) | Setelah adjudikasi: Claude vs final |
 |---|---|---|---|
-| Relevansi per komentar | 100 | 0,27 | 0,71 |
+| Relevansi per komentar | 100 | 0,267 | 0,71 |
 | Sikap | 99 | 0,235 | 0,757 |
 | Tema (kalibrasi pilot, codebook v0) | 49 | 0,484 | – |
 | Tema (validasi, codebook v1.1) | 100 | **0,452** | 0,753 (validator vs final: 0,65) |
@@ -91,7 +91,7 @@ Laporkan tabel ini apa adanya:
 - RQ2 dan RQ3: proporsi tema utama di setiap kelompok. Perbandingan memakai **proporsi, bukan jumlah**, karena korpus tidak seimbang (pemerintah 1.202 vs komersial 425 komentar `tolak`).
 - Chi-square dan Cramér's V dilaporkan sebagai **ukuran deskriptif**. Komentar mengelompok di dalam 7 kasus (tidak independen), sehingga nilai p terlalu optimistis.
 - Karena jenis organisasi dan jenis video tumpang tindih, RQ2 juga dibandingkan **di dalam** setiap jenis video. Hasil per kasus juga dilaporkan.
-- **Robustness check:** perbandingan diulang hanya dengan kasus yang terverifikasi media kredibel (C01 dan C02).
+- **Robustness check:** perbandingan RQ2 diulang hanya dengan kasus yang terverifikasi: lewat berita media kredibel (C01, C02, C04) atau lewat pengakuan resmi organisasi bahwa animasinya dibuat dengan AI (C07, keterangan di akhir video yang diunggah di Instagram Menteri Komdigi). Tulis jenis bukti per kasus di tabel kasus.
 
 ---
 
@@ -114,7 +114,7 @@ Struktur yang disarankan: 3.1 tema keberatan (RQ1), 3.2 pemerintah vs komersial 
 
 **Pesan utama:** keberatan bukan satu kategori "anti-AI". Empat tema terbesar (kualitas, kepantasan organisasi, pekerja kreatif, uang) masing-masing mencakup lebih dari 13%. Hanya 9,6% komentar yang menolak tanpa alasan apa pun. Tema yang diharapkan proposal semuanya muncul, ditambah dua tema baru: **biaya/anggaran/korupsi** dan **kekhawatiran umum tentang AI**. Hak cipta, yang ada di proposal, ternyata kecil (3,1%) dan hampir seluruhnya berasal dari satu kasus (C01).
 
-**Kutipan:** kutip komentar apa adanya (termasuk ejaan dan emoji), tanpa nama atau identitas akun. `@user` adalah hasil anonimisasi.
+**Kutipan:** jangan kutip komentar verbatim di laporan (TK2 §3.6: hanya agregat). Pakai parafrase singkat tanpa identitas akun; contoh di bawah hanya untuk tim.
 
 ### 3.2 RQ2: pemerintah vs komersial → **Gambar 2** (`fig2_rq2_org_type.png`)
 
@@ -134,7 +134,7 @@ Struktur yang disarankan: 3.1 tema keberatan (RQ1), 3.2 pemerintah vs komersial 
 
 **Wajib ditulis bersama hasil ini (lihat 3.4):**
 - Di dalam video pihak ketiga, selisih kepantasan organisasi justru **lebih besar** (pemerintah 31,5% vs komersial 10,5%), begitu pula anggaran (20,3% vs 12,0%). Pola "pemerintah → kepantasan dan uang" bertahan.
-- Selisih kualitas visual sebagian besar berasal dari dua kasus komersial di video re-upload (C05, C06; 56% kualitas visual). Pada robustness check, arahnya berbalik.
+- Selisih kualitas visual sebagian besar berasal dari dua kasus komersial di video re-upload (C05, C06; 56% kualitas visual). Tanpa keduanya (robustness check), selisihnya mengecil dan tidak konsisten antarkasus pemerintah.
 
 ### 3.3 RQ3: jenis video → **Gambar 3** (`fig3_rq3_video_type.png`)
 
@@ -163,11 +163,32 @@ Gambar 4 adalah peta panas tema × kasus. Setiap kolom berjumlah 100%. Temuan ya
 - **C07** (animasi AI Komdigi kedua): 30% kepantasan organisasi. Banyak komentar soal "lomba AI" dan pemakaian AI yang berulang.
 - **C01** (Indomie): satu-satunya kasus dengan hak cipta yang besar (12%) dan kekhawatiran umum AI (12%), karena kolom komentarnya berisi debat AI art.
 
-**Robustness check** (`tabel_robustness.csv`): hanya C01 (komersial) vs C02 (pemerintah), dua kasus yang diverifikasi media kredibel.
-- Pekerja kreatif: pemerintah 35,4% vs komersial 14,5%. Kepantasan organisasi: 16,9% vs 10,5%. Arahnya sama dengan hasil utama.
-- Kualitas visual **berbalik** (32,3% vs 26,4%).
-- Hak cipta, ejekan, dan kekhawatiran umum AI 0% di C02.
-- Karena setiap jenis organisasi hanya diwakili satu kasus, perbedaan organisasi dan perbedaan kasus tidak bisa dipisahkan. Tulis ini secara eksplisit.
+**Status verifikasi kasus** (dasar subset robustness; tingkat verifikasi mengikuti proposal):
+
+| Kasus | Status | Bukti |
+|---|---|---|
+| C01 Indomie | Media kredibel | Suara.com (2023) [11] |
+| C02 MBG Komdigi | Media kredibel | Tempo [9], [10] |
+| C04 POLRI "Pahlawan Masa Kini" | Media kredibel | Suara.com, 23 Juni 2025: video dirilis Divisi Humas Polri di akun X resmi pada 22 Juni 2025 [ISI nomor referensi] |
+| C07 Animasi AI Komdigi (Maret 2025) | Pernyataan resmi | Diunggah di Instagram Menteri Komdigi Meutya Hafid; keterangan di akhir video menyatakan animasi dibuat dengan AI [ISI link/tanggal unggahan] |
+| C03, C05, C06 | Belum terverifikasi | Hanya dari isi video dan komentar |
+
+**Robustness check** (`tabel_robustness.csv`): hanya 4 kasus terverifikasi, yaitu pemerintah C02, C04, C07 (n=709) vs komersial C01 (n=276); total 985 komentar `tolak`. χ² = 128,2; df = 6; Cramér's V = 0,361 (deskriptif).
+
+| Tema | Pemerintah (terverifikasi) | Komersial (C01) | Selisih | Selisih di semua kasus |
+|---|---|---|---|---|
+| Kepantasan organisasi | 31,5 | 10,5 | **+21,0** | +13,4 |
+| Biaya, anggaran & korupsi | 20,3 | 12,0 | +8,3 | +5,5 |
+| Pekerja kreatif | 19,2 | 14,5 | +4,7 | +5,8 |
+| Kualitas visual | 17,8 | 26,4 | −8,6 | −10,8 |
+| Ejekan tanpa alasan | 3,2 | 12,0 | −8,8 | −3,0 |
+| Kekhawatiran umum AI | 6,1 | 11,6 | −5,5 | −3,5 |
+| Hak cipta | 2,0 | 12,0 | −10,0 | −6,7 |
+
+- Semua arah selisih **sama** dengan hasil utama. Selisih kepantasan organisasi dan anggaran malah membesar.
+- Konsistensi per kasus (lihat `tabel_per_kasus.csv`): kepantasan organisasi dan anggaran lebih tinggi daripada C01 di **ketiga** kasus pemerintah (KO 16,9 / 39,6 / 30,2 vs 10,5; AK 15,4 / 23,0 / 19,9 vs 12,0). Hak cipta, ejekan, dan kekhawatiran umum AI lebih rendah di ketiganya. Pekerja kreatif dan kualitas visual **tidak** konsisten: PK tinggi di C02 (35,4) tetapi rendah di C04 (5,3); KV tinggi di C02 (32,3) tetapi rendah di C07 (12,9). Jadi yang kuat dari RQ2 adalah pola "pemerintah → kepantasan organisasi dan uang", bukan "pemerintah → pekerja kreatif".
+- Sisi komersial hanya diwakili satu kasus (C01), jadi perbedaan jenis organisasi dan perbedaan kasus tetap tidak bisa dipisahkan sepenuhnya. Tulis ini secara eksplisit.
+- Keempat kasus terverifikasi berjenis video pihak ketiga, sehingga subset ini sama dengan stratifikasi "di dalam video pihak ketiga" di 3.2, dan RQ3 tidak bisa diuji ulang di subset ini.
 
 **Kalimat kunci untuk bagian ini:**
 > Perbedaan antarkasus sama besarnya dengan perbedaan antarjenis organisasi, sehingga perbandingan RQ2 dan RQ3 perlu dibaca bersama hasil per kasus.
@@ -182,11 +203,11 @@ Gambar 4 adalah peta panas tema × kasus. Setiap kolom berjumlah 100%. Temuan ya
 
 ## 4. Keterbatasan yang wajib ditulis (Bab Penutup atau akhir Bab Hasil)
 
-1. **Reliabilitas pelabelan:** semua κ buta di bawah 0,6 (relevansi 0,27; sikap 0,235; tema 0,452). Label akhir adalah hasil Claude yang direvisi setelah adjudikasi manusia, dan tidak divalidasi ulang dengan sampel buta baru.
+1. **Reliabilitas pelabelan:** semua κ buta di bawah 0,6 (relevansi 0,267; sikap 0,235; tema 0,452). Label akhir adalah hasil Claude yang direvisi setelah adjudikasi manusia, dan tidak divalidasi ulang dengan sampel buta baru.
 2. **Peran model bahasa:** sebagian besar label dibuat oleh Claude. Validasi manusia hanya pada sampel 100 komentar per tahap, dan adjudikasi dilakukan oleh satu anggota tim.
 3. **Efek kasus:** hanya 7 kasus (pemerintah 4, komersial 3). Perbedaan organisasi tidak bisa dipisahkan dari perbedaan kasus, dan uji statistik tidak memperhitungkan pengelompokan komentar dalam kasus.
 4. **Tidak ada video unggahan resmi:** RQ3 hanya membandingkan pihak ketiga dan re-upload/arsip.
-5. **Verifikasi kasus:** 5 dari 7 kasus berstatus `to_verify` (belum ada sumber media kredibel). Robustness check hanya menyisakan dua kasus.
+5. **Verifikasi kasus:** 3 dari 7 kasus (C03, C05, C06) masih berstatus `to_verify`; semuanya video re-upload/arsip. C07 diverifikasi lewat pengakuan resmi organisasi, bukan berita media. Robustness check menyisakan 4 kasus, dengan hanya satu kasus komersial.
 6. **Ketidakseimbangan korpus:** komentar pemerintah sekitar tiga kali komentar komersial, dan Komdigi sendiri mencakup tiga kasus.
 7. **Bahasa:** komentar berbahasa Inggris dikeluarkan, dan bahasa daerah tidak dideteksi terpisah.
 8. **Representasi:** komentar YouTube tidak mewakili seluruh masyarakat Indonesia.
@@ -216,5 +237,5 @@ Nama tema di teks dan grafik harus sama dengan tabel di 3.1.
 - [ ] Tidak ada klaim kausal atau klaim keterwakilan nasional.
 - [ ] Peran Claude dan κ buta ditulis terbuka di 2.8.
 - [ ] Hasil RQ2 selalu disertai catatan efek kasus (3.4).
-- [ ] Kutipan komentar tanpa identitas akun.
+- [ ] Tidak ada kutipan verbatim komentar (parafrase saja) dan tidak ada identitas akun.
 - [ ] Sudah dicek dengan /humanizer.

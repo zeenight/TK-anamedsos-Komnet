@@ -31,12 +31,12 @@
     "n": 642,
     "note": "LT excluded (3 comments); comments are clustered in 7 cases, so p-values overstate certainty and are descriptive only"
   },
-  "robustness_org_type_credible_only": {
-    "chi2": 38.24,
+  "robustness_org_type_verified_only": {
+    "chi2": 128.21,
     "dof": 6,
-    "p": 1.01e-06,
-    "cramers_v": 0.336,
-    "n": 338,
+    "p": 3.06e-25,
+    "cramers_v": 0.361,
+    "n": 982,
     "note": "LT excluded (3 comments); comments are clustered in 7 cases, so p-values overstate certainty and are descriptive only"
   }
 }

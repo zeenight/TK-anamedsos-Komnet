@@ -1,0 +1,5 @@
+video_type,periode,dukung,lain,tolak,n
+reupload_archive,<=7 hari,0.0,9.1,90.9,44
+reupload_archive,>7 hari,0.9,12.1,87.0,692
+third_party,<=7 hari,8.7,27.7,63.5,1067
+third_party,>7 hari,10.7,26.0,63.3,485

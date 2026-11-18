@@ -1,0 +1,9 @@
+case_id,org_type,video_type,n_video,views,komentar_terkumpul,lolos_kualitas,relevan,tolak,pct_balasan,author_unik,komentar_per_author,pct_author_1_komentar,pct_komentar_dari_author_3plus
+C01,commercial,third_party,2,586017,647,630,457,276,31.3,526,1.2,90.3,14.8
+C02,government,third_party,1,51848,172,135,92,65,34.1,113,1.19,87.6,8.9
+C03,government,reupload_archive,1,39972,730,698,563,493,15.9,612,1.14,90.4,7.9
+C04,government,third_party,1,138160,553,538,306,187,20.1,488,1.1,91.8,4.5
+C05,commercial,reupload_archive,1,16132,127,111,82,77,19.8,92,1.21,90.2,14.4
+C06,commercial,reupload_archive,1,567978,125,115,91,72,29.6,95,1.21,85.3,13.9
+C07,government,third_party,1,195458,953,918,697,457,33.6,709,1.29,88.7,19.9
+Total,,,8,1595565,3307,3145,2288,1627,26.3,2545,1.24,87.4,14.7
